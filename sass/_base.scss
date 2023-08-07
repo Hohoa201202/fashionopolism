@@ -1,0 +1,165 @@
+html {
+    box-sizing: border-box;
+    line-height: 1.6rem;
+    scroll-behavior: smooth;
+    font: {
+        family: $main-family;
+        size: 100%;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(96, 96, 80);
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(54, 52, 52);
+}
+
+::-webkit-scrollbar-track {
+    background: #e6e6e6;
+}
+
+// ------------------------------Add Class----------------------------------
+// font_size
+@for $i from 1 through length($font-sizes) {
+    $size: nth($font-sizes, $i);
+    .h#{$i}-size {
+        font-size: $size;
+    }
+}
+
+// margin and padding
+@for $i from 0 through 5 {
+    .mx-#{$i} {
+        margin-left: #{$i}rem !important;
+        margin-right: #{$i}rem !important;
+    }
+
+    .my-#{$i} {
+        margin-top: #{$i}rem !important;
+        margin-bottom: #{$i}rem !important;
+    }
+
+    .ms-#{$i} {
+        margin-left: #{$i}rem !important;
+    }
+
+    .me-#{$i} {
+        margin-right: #{$i}rem !important;
+    }
+
+    .m-#{$i} {
+        margin: #{$i}rem !important;
+    }
+
+    .px-#{$i} {
+        padding: #{$i}rem !important;
+        padding-right: #{$i}rem !important;
+    }
+
+    .py-#{$i} {
+        padding-top: #{$i}rem !important;
+        padding-bottom: #{$i}rem !important;
+    }
+
+    .ps-#{$i} {
+        padding: #{$i}rem !important;
+    }
+
+    .pe-#{$i} {
+        padding-right: #{$i}rem !important;
+    }
+
+    .p-#{$i} {
+        padding: #{$i}rem !important;
+    }
+}
+
+#main {
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    display: block;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.container-fluid {
+    display: block;
+    width: 100%;
+}
+
+.form-input {
+    padding: 0.3rem;
+    border-radius: 10px;
+    border: 1px solid $border-color;
+    position: relative;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+.row.no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+// .modal {
+//     .js-modal-hidden {
+
+//     }
+// }
+
+.js-modal-overlay {
+    position: absolute;
+    top: -($height-header);
+    right: 0;
+    z-index: 9998;
+    bottom: 0;
+    left: 0;
+    background: rgb(30, 30, 30);
+    opacity: 0;
+    transition:
+        opacity 0.3s ease-in-out,
+        visibility 0.3s ease-in-out;
+    visibility: hidden;
+}
+
+.js-modal-overlay.active {
+    opacity: 0.7;
+    visibility: visible;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transform: translateY(0);
+}

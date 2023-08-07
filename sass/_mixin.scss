@@ -1,0 +1,37 @@
+@mixin bgc($bgColor){
+    background-color: $bgColor;
+}
+
+@mixin size($width, $height: $width){
+    height: $height;
+    width: $width;
+}
+
+@mixin positionAbsolute($direction: "both", $distance: 0) {
+    position: absolute;
+    @if ($direction == "bottom") {
+        bottom: $distance;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @if ($direction == "top") {
+        top: $distance;
+        right: 50%;
+        transform: translateX(50%);
+    }
+    @if ($direction == "left") {
+        left: $distance;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @if ($direction == "right") {
+        right: $distance;
+        bottom: 50%;
+        transform: translateY(50%);
+    }
+    @if ($direction == "both") {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

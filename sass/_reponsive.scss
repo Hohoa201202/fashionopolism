@@ -1,0 +1,213 @@
+// <= Tablet
+@media (max-width: 1023px) {
+    .container {
+        padding: 8px;
+    }
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .col {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .header {
+        &__nav {
+            line-height: 0;
+        }
+        &__nav-mobile {
+            display: block !important;
+        }
+
+        &__container {
+            width: 90%;
+            justify-content: center;
+        }
+
+        &__btn-show-menu-mobile {
+            flex: 1;
+            display: block;
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        &__cart {
+            .cart__container {
+                .cart__item--search,
+                .cart__item--user {
+                    display: none;
+                }
+
+                .cart__item {
+                    font-size: nth($font-sizes, 2);
+                    padding: 12px 20px;
+                }
+            }
+        }
+    }
+
+    .slideshow {
+        &__wrapper {
+            height: 580px;
+        }
+    }
+}
+
+// <= Mobile
+@media screen and (max-width: 739px) {
+    html {
+        line-height: 1.4rem;
+        font-size: 90%;
+    }
+
+    .header {
+        &__container {
+            width: 100%;
+        }
+
+        .header__logo {
+            .logo__img {
+                max-width: 180px;
+            }
+        }
+    }
+
+    .gallery {
+        margin-top: 24px;
+        &__container {
+            justify-content: start;
+
+            &-box {
+                flex: 0 0 auto;
+                width: 270px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            &--mobile {
+                width: 100%;
+
+                .gallery__img {
+                    height: 600px;
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+            }
+        }
+
+        &__container-2 {
+            flex-wrap: wrap;
+        }
+    }
+
+    .collection {
+        &__box {
+            .product-list {
+                &__item {
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+    .collection-loop {
+        .collection__box {
+            .product-list {
+                flex-wrap: wrap;
+            }
+        }
+    }
+    .usp {
+        &__container {
+            .usp__content {
+                width: 270px;
+            }
+        }
+    }
+
+    .imageWithText {
+        flex-wrap: wrap;
+        padding: 20px 12px;
+        &__img {
+            width: 100%;
+        }
+
+        &__caption {
+            padding: 0;
+            width: 100%;
+        }
+    }
+
+    .newsletter {
+        &__container {
+            padding: 32px 12px;
+            .newsletter__contentWrapper {
+                padding: 12px;
+                width: 100%;
+                text-align: center;
+                .contact-form {
+                    #newsletter__email-input {
+                        text-align: center;
+                    }
+                    .newsletter__email-label {
+                        @include positionAbsolute();
+                    }
+                }
+                .newsletter__social-icons {
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    .footer {
+        &__container-top,
+        &__container-bottom {
+            flex-direction: column;
+            margin-top: 12px;
+            .footer__item {
+                width: 100%;
+                margin: 20px 0;
+            }
+        }
+        &__container-bottom {
+            flex-direction: column-reverse;
+            .footer__item {
+                margin: 20px 0;
+            }
+            .footer__item:first {
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Tablet mini and Tablet Pro
+@media (min-width: 740px) and (max-width: 1023px) {
+    .collection {
+        &__box {
+            .product-list {
+                &__item {
+                    width: 33.33333%;
+                }
+            }
+        }
+    }
+}
+
+/* > PC low resolution */
+@media (min-width: 1024px) {
+    .header {
+        &__nav-mobile {
+            transform: translateX(-100%);
+        }
+    }
+}

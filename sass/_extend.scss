@@ -1,0 +1,48 @@
+%ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+%link {
+    text: {
+        decoration: none;
+    }
+    color: $cart-links;
+    display: block;
+    padding: 0 0.8rem 0;
+    position: relative;
+    &:hover {
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+
+%btnBlack {
+    display: block;
+    background-color: $slide-button-color;
+    color: $slide-button-text;
+    letter-spacing: 1px;
+    line-height: 48px;
+    height: 48px;
+    border: none;
+    padding: 0 0.8rem 0;
+    &:hover {
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+
+%btnCircle {
+    border-radius: 50%;
+    padding: 0.6rem;
+    border: none;
+    opacity: 0.9;
+    font-style: 1rem;
+    transition-property: font-style, opacity;
+    transition: 0.2s;
+    &:hover {
+        opacity: 1;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+}
